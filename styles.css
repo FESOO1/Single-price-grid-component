@@ -21,6 +21,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-block: 40px;
 }
 
 .grid {
@@ -29,7 +30,7 @@ body {
     background-color: white;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     border-radius: 1rem;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
     overflow: hidden;
@@ -117,7 +118,7 @@ body {
     background-color: rgb(74, 190, 189);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    row-gap: 20px;
 }
 
 .grid-inner-three > h3 {
@@ -129,4 +130,39 @@ body {
     color: white;
     font-weight: 300;
     line-height: 27px;
+}
+
+/* MEDIA QEURIES */
+
+@media (max-width: 800px) {
+    .grid {
+        width: 94%;
+    }
+}
+
+@media (max-width: 650px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+    }
+    .grid-inner-one {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        width: 92%;
+    }
+    .grid-inner {
+        padding: 25px;
+    }
+    .grid-inner-one > h2 {
+        font-size: 1.5rem;
+    }
+    .grid-inner-one > h3,
+    .grid-inner-two > h3,
+    .grid-inner-three > h3 {
+        font-size: 1.1rem;
+    }
 }
